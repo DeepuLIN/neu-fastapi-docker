@@ -1,0 +1,28 @@
+fastapi
+uvicorn
+python-multipart
+
+# Core ML
+torch==2.11.0
+torchvision==0.26.0
+pytorch-lightning==2.5.1.post0
+torchmetrics
+
+# MLflow
+mlflow==3.10.1
+
+# Model deps (CRITICAL)
+numpy==2.2.6
+pandas==2.2.3
+matplotlib==3.10.3
+scipy==1.15.3
+dill==0.4.1
+rich==14.3.3
+defusedxml==0.7.1
+cloudpickle==3.1.2
+attrs==26.1.0
+
+# Image / CV
+opencv-python-headless
+pillow
+grad-cam

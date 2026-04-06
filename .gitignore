@@ -1,0 +1,21 @@
+# Data
+data/
+
+# Models
+models/
+*.ckpt
+*.pt
+*.pth
+
+# MLflow
+mlruns/
+
+# Cache
+__pycache__/
+*.pyc
+
+# Notebook
+.ipynb_checkpoints/
+
+# System
+.DS_Store
