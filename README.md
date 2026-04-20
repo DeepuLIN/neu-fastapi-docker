@@ -38,11 +38,11 @@ Three architectures were evaluated:
 
 ### Accuracy Comparison
 
-![Accuracy Comparison](assets/accuracy_plot.png)
+![Accuracy Comparison](accuracy_plot.png)
 
 ### Loss Comparison
 
-![Loss Comparison](assets/loss_plot.png)
+![Loss Comparison](loss_plot.png)
 
 ### 📌 Observations
 
@@ -67,19 +67,6 @@ Grad-CAM is used to visualize which regions influence the model’s prediction.
 The model correctly focuses on defect regions, improving interpretability and trust in predictions.
 
 ---
-## 🔍 Model Explainability (Grad-CAM)
-
-Grad-CAM is used to visualize which regions influence the model’s prediction.
-
-<p align="center">
-  <img src="assets/1.jpg" width="250"/>
-  <img src="assets/1_gradcam.jpg" width="250"/>
-</p>
-
-**Left:** Original Image  
-**Right:** Grad-CAM Heatmap  
-
-The model correctly focuses on defect regions, improving interpretability and trust in predictions.
 
 
 ## 📂 Project Structure
