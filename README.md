@@ -57,8 +57,8 @@ Three architectures were evaluated:
 Grad-CAM is used to visualize which regions influence the model’s prediction.
 
 <p align="center">
-  <img src="assets/1.jpg" width="250"/>
-  <img src="assets/1_gradcam.jpg" width="250"/>
+  <img src="tests/1.jpg" width="250"/>
+  <img src="tests/1_gradcam.jpg" width="250"/>
 </p>
 
 **Left:** Original Image
