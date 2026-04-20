@@ -1,28 +1,86 @@
 # 🚀 NEU Surface Defect Classification API (FastAPI + Docker)
 
-A production-ready machine learning API for surface defect classification using deep learning, deployed with FastAPI and Docker.
+A production-ready machine learning system for steel surface defect classification using deep learning, with explainability and API deployment.
 
 ---
 
 ## 📌 Overview
 
-This project provides an end-to-end pipeline for:
+This project implements an **end-to-end computer vision pipeline** for industrial surface defect detection:
 
-* Training a deep learning model for surface defect classification (NEU dataset)
+* Training deep learning models on the NEU surface defect dataset
+* Comparing multiple architectures (ResNet18, ResNet34, MobileNet)
+* Interpreting model predictions using Grad-CAM
 * Serving predictions via a FastAPI REST API
-* Containerizing the application using Docker for reproducibility and deployment
+* Deploying with Docker for reproducibility
 
 ---
 
 ## 🧠 Features
 
-* ✅ Deep Learning model (PyTorch / PyTorch Lightning)
-* ✅ Image classification API with FastAPI
-* ✅ Grad-CAM visualization for model explainability
-* ✅ Dockerized deployment (portable & reproducible)
-* ✅ Clean modular project structure
+* ✅ Deep Learning models (PyTorch / PyTorch Lightning)
+* ✅ Model comparison across architectures
+* ✅ FastAPI-based inference API
+* ✅ 🔍 Grad-CAM explainability
+* ✅ 📊 MLflow experiment tracking (optional)
+* ✅ 🐳 Dockerized deployment
+* ✅ Clean, modular project structure
 
 ---
+
+## 📊 Model Comparison
+
+Three architectures were evaluated:
+
+* ResNet18
+* ResNet34
+* MobileNet
+
+### Accuracy Comparison
+
+![Accuracy Comparison](assets/accuracy_plot.png)
+
+### Loss Comparison
+
+![Loss Comparison](assets/loss_plot.png)
+
+### 📌 Observations
+
+* ResNet34 achieved the highest accuracy with stable convergence
+* MobileNet provides a lightweight alternative with faster inference
+* ResNet18 offers a good trade-off between performance and efficiency
+
+---
+
+## 🔍 Model Explainability (Grad-CAM)
+
+Grad-CAM is used to visualize which regions influence the model’s prediction.
+
+<p align="center">
+  <img src="assets/1.jpg" width="250"/>
+  <img src="assets/1_gradcam.jpg" width="250"/>
+</p>
+
+**Left:** Original Image
+**Right:** Grad-CAM Heatmap
+
+The model correctly focuses on defect regions, improving interpretability and trust in predictions.
+
+---
+## 🔍 Model Explainability (Grad-CAM)
+
+Grad-CAM is used to visualize which regions influence the model’s prediction.
+
+<p align="center">
+  <img src="assets/1.jpg" width="250"/>
+  <img src="assets/1_gradcam.jpg" width="250"/>
+</p>
+
+**Left:** Original Image  
+**Right:** Grad-CAM Heatmap  
+
+The model correctly focuses on defect regions, improving interpretability and trust in predictions.
+
 
 ## 📂 Project Structure
 
@@ -30,6 +88,7 @@ This project provides an end-to-end pipeline for:
 .
 ├── api/                # FastAPI application
 ├── src/                # Training, inference, utilities
+├── assets/             # Plots + Grad-CAM images
 ├── models/             # Saved checkpoints (ignored in Git)
 ├── data/               # Dataset (ignored in Git)
 ├── tests/              # Sample test images
@@ -127,8 +186,6 @@ Upload an image file and receive:
 
 ## 🧪 Example Usage
 
-Using curl:
-
 ```
 curl -X POST "http://localhost:8000/predict/image" \
   -H "accept: application/json" \
@@ -138,28 +195,28 @@ curl -X POST "http://localhost:8000/predict/image" \
 
 ---
 
-## 📊 Model
+## 📊 Model Details
 
-* Architecture: ResNet / MobileNet (PyTorch)
+* Architecture: ResNet18 / ResNet34 / MobileNet
 * Framework: PyTorch Lightning
 * Explainability: Grad-CAM
-* Experiment tracking: MLflow (optional)
+* Tracking: MLflow
 
 ---
 
 ## ⚠️ Notes
 
-* Dataset is **not included** in this repository
-* Model checkpoints are ignored for lightweight version control
-* Use `src/download_data.py` or external sources to fetch dataset
+* Dataset is **not included**
+* Model checkpoints are excluded for lightweight version control
+* Use `src/download_data.py` to fetch dataset
 
 ---
 
 ## 🚀 Future Improvements
 
 * CI/CD pipeline (GitHub Actions)
-* Model versioning with MLflow
-* Deployment to cloud (AWS / Azure / GCP)
+* Model registry & versioning (MLflow)
+* Cloud deployment (AWS / Azure / GCP)
 * Batch inference support
 
 ---
@@ -174,3 +231,4 @@ Machine Learning Engineer | Computer Vision | MLOps
 ## ⭐ If you found this useful
 
 Give it a star ⭐ on GitHub — it helps a lot!
+
